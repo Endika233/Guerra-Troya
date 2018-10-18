@@ -43,7 +43,7 @@ namespace Guerra_Troya
             }
             return ocupantes;
         }
-        public List<Troyano> SetOcupante(Troyano troyano)//Si entrada troyano=1Mostrar:ATENCION!! Guerrero Troyano 'nombre' intentando acceder al caballo y 2matarlo
+        public List<Troyano> SetOcupante(Troyano troyano)
         {
             Console.WriteLine("¡¡ATENCIÖN!! Guerrero Troyano " + troyano.GetNombre() + " intentando acceder al caballo, procedemos a su ejecución");
             troyano.SetMuerto(true);
