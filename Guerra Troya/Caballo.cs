@@ -69,8 +69,17 @@ namespace Guerra_Troya
                 Console.WriteLine("No ha sido posible encontrar al guerrero en la posicion especificada");
             }
         }
+        public void MostrarCaballo()
+        {
+            Console.WriteLine("Caballo con capacidad para "+capacidad+" guerreros, con "+ocupacion+" combatientes en el\nDatos de los guerreros:");
+            foreach (Griego persona in ocupantes)
+            {
+                persona.ShowAll();
+            }
+        }
 
     }
 }
-//e) Crear un método MontarseEnCaballo(guerrero) que reciba como parámetro un guerrero, compruebe que es Griego y lo 
-//meta en la lista de ocupantes(si hay sitio). Si el que quiere montarse es Troyano se mostrará el siguiente mensaje y matarlo:
+//Crea el método MostarCaballo() que muestra en pantalla la información relativa:
+//	-Capacidad, ocupación y lista de ocupantes con sus datos
+
