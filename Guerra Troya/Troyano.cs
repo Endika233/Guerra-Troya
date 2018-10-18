@@ -42,6 +42,22 @@ namespace Guerra_Troya
         public void ShowAll()
         {
             Console.WriteLine("Facción:Troyanos\nGuerrero: " + nombre + "\nEdad: " + edad + "\nFuerza: " + fuerza);
+            if (herido)
+            {
+                Console.WriteLine("El combatiente esta herido");
+            }
+            if (muerto)
+            {
+                Console.WriteLine("El combatiente ha muerto");
+            }
+            if (retirarse)
+            {
+                Console.WriteLine("El combatiente se ha retirado");
+            }
+            else
+            {
+                Console.WriteLine("Estado: Combatiente sano y en activo");
+            }
         }
         public void SetNombre(string nombre)
         {
@@ -61,7 +77,7 @@ namespace Guerra_Troya
         }
         public void SetMuerto(bool muerto)
         {
-            this.muerto=muerto;
+            this.muerto=muerto;//TODO:En realidad no haria falta introducir un booleano, solo hacer que cuando se invoque el metodo el estado cambie a muerto
         }
         public void SetRetirarse(bool retirarse)
         {

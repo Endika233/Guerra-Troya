@@ -10,7 +10,7 @@ namespace Guerra_Troya
     {
         private string nombre;
         private int edad, fuerza;
-        private bool herido, muerto,retirarse;//TODO:Crear atributo string estado=esta herido, muerto o herido y retirandose
+        private bool herido, muerto,retirarse;
         public Griego()
         {
             this.nombre = "GriegoX";
@@ -40,6 +40,22 @@ namespace Guerra_Troya
         public void ShowAll()
         {
             Console.WriteLine("Facción:Griegos\nGuerrero: "+nombre+"\nEdad: "+edad+"\nFuerza: "+fuerza);
+            if (herido)
+            {
+                Console.WriteLine("El combatiente esta herido");
+            }
+            if (muerto)
+            {
+                Console.WriteLine("El combatiente ha muerto");
+            }
+            if (retirarse)
+            {
+                Console.WriteLine("El combatiente se ha retirado");
+            }
+            else
+            {
+                Console.WriteLine("Estado: Combatiente sano y en activo");
+            }
         }
         public void SetNombre(string nombre)
         {

@@ -24,6 +24,28 @@ namespace Guerra_Troya
                 this.ocupacion = ocupantes.Count();
             }          
         }
+        public void SetOcupante(Griego griego)//Meter objeto griego a lista ocupantes si hay sitio y actualizar ocupacion.Mostrar:Guerrero Griego 'nombre' montado en el caballo
+        {
+            if(capacidad > ocupantes.Count())
+            {
+                ocupantes.Add(griego);
+                ocupacion = ocupantes.Count();
+                Console.WriteLine("Guerrero Griego "+griego.GetNombre()+"montado en el caballo");
+            }
+            else if (capacidad <= ocupantes.Count())
+            {
+                Console.WriteLine("No queda sitio en el caballo");
+            }
+            else
+            {
+                Console.WriteLine("Algo raro has hecho tío, mira la clase caballo método SetOcupante");//TODO
+            }
+        }
+        public void SetOcupante(Troyano troyano)//Si entrada troyano=1Mostrar:ATENCION!! Guerrero Troyano 'nombre' intentando acceder al caballo y 2matarlo
+        {
+            Console.WriteLine("¡¡ATENCIÖN!! Guerrero Troyano " + troyano.GetNombre() + " intentando acceder al caballo, procedemos a su ejecución");
+            troyano.SetMuerto(true);
+        }
         public int Buscar(string nombre)
         {           
             foreach(Griego ocupante in ocupantes)
@@ -51,4 +73,4 @@ namespace Guerra_Troya
     }
 }
 //e) Crear un método MontarseEnCaballo(guerrero) que reciba como parámetro un guerrero, compruebe que es Griego y lo 
-//meta en el array de ocupantes(si hay sitio). Si el que quiere montarse es Troyano se mostrará el siguiente mensaje y matarlo:
+//meta en la lista de ocupantes(si hay sitio). Si el que quiere montarse es Troyano se mostrará el siguiente mensaje y matarlo:
