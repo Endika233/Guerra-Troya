@@ -39,7 +39,7 @@ namespace Guerra_Troya
         }
         public static Troyano CrearToyano()
         {
-            Troyano troyano = new Troyano();
+            Troyano troyano = new Troyano();//Como hacer para añadir aqui a la lista griego            
             return troyano;
         }
         public static Griego CrearGriego()
