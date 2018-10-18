@@ -8,11 +8,11 @@ namespace Guerra_Troya
 {
     class Troyano
     {
-        //TODO:mirar limites que pueda tener fuerza y edad y ponerselos
+        
         //TODO:metodo para enseñar todos los atributos
         private string nombre;
         private int edad, fuerza;
-        private bool herido, muerto,retirarse;
+        private bool herido, muerto;
         public Troyano()
         {
             this.nombre = "TroyanoX";
@@ -22,7 +22,7 @@ namespace Guerra_Troya
         public Troyano(string nombre, int edad, int fuerza)
         {
             this.nombre = nombre;
-            if (edad >= 0 && edad <= 120)
+            if (edad >= 15 && edad <= 60)
             {
                 this.edad = edad;
             }
@@ -46,13 +46,9 @@ namespace Guerra_Troya
             {
                 Console.WriteLine("El combatiente esta herido");
             }
-            if (muerto)
+            else if (muerto)
             {
                 Console.WriteLine("El combatiente ha muerto");
-            }
-            if (retirarse)
-            {
-                Console.WriteLine("El combatiente se ha retirado");
             }
             else
             {
@@ -65,11 +61,25 @@ namespace Guerra_Troya
         }
         public void SetEdad(int edad)
         {
-            this.edad = edad;
+            if (edad >= 15 && edad <= 60)
+            {
+                this.edad = edad;
+            }
+            else
+            {
+                this.edad = 25;
+            }
         }
         public void SetFuerza(int fuerza)
         {
-            this.fuerza = fuerza;
+            if (fuerza >= 0 && fuerza <= 10)
+            {
+                this.fuerza = fuerza;
+            }
+            else
+            {
+                this.fuerza = 5;
+            }
         }
         public void SetHerido(bool herido)
         {
@@ -81,10 +91,7 @@ namespace Guerra_Troya
         }
         public void SetRetirarse(bool retirarse)
         {
-            if (retirarse == true)
-            {
                 Console.WriteLine("Los Guerreros Troyanos NUNCA se retiran!!!");
-            }//No hace falta ponerle valor porque siempre estara en false
         }
         public string GetNombre()
         {
@@ -105,10 +112,6 @@ namespace Guerra_Troya
         public bool GetMuerto()
         {
             return muerto;
-        }
-        public bool GetRetirarse()
-        {
-            return retirarse;
         }
     }
 }

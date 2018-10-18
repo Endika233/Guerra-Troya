@@ -12,22 +12,60 @@ namespace Guerra_Troya
         {
             List<Troyano> listaTroyanos = new List<Troyano>();
             List<Griego> listaGriegos = new List<Griego>();
+            listaGriegos.Add(CrearGriego("Aquiles",30,10));
+            listaGriegos.Add(CrearGriego("Agamenon",29,9));
+            listaGriegos.Add(CrearGriego("Ajax",28,8));
+
+            Caballo caballo1 = new Caballo(20,listaGriegos);
+            caballo1.MostrarCaballo();
+
+            
+            listaGriegos=caballo1.SetOcupante(CrearGriego());
+            caballo1.MostrarCaballo();
+
+            caballo1.Buscar("Agamenon");
+            caballo1.Buscar("Odiseo");
+
+            listaTroyanos=caballo1.SetOcupante(CrearToyano("Paris", 20, 10));
+            foreach (Griego g in listaGriegos)
+            {
+                g.ShowAll();
+            }
+            foreach (Troyano t in listaTroyanos)
+            {
+                t.ShowAll();
+            }
+
+
+            Console.ReadLine();
+//2.Crear un caballo con capacidad para 20 guerreros.
+//3.Crear 3  guerreros griegos(Aquiles, Agamenon y Ajax) y montarlos en el caballo.
+//4.Mostrar caballo.
+//5.Crea otro guerrero griego anónimo y móntalo en el caballo y muestra el caballo.
+//6.Buscar a Agamenon en el caballo y mostrar sus datos.
+//7.Buscar  a Odiseo en el caballo y comprobar que no existe.
+//8.Crear 1 guerrero troyano(Paris ).
+//9.Montarlo en el caballo y comprobar que no es posible.
         }
-        public static void CrearToyano()
+        public static Troyano CrearToyano()
         {
-            Troyano troyano = new Troyano(); 
+            Troyano troyano = new Troyano();
+            return troyano;
         }
-        public static void CrearGriego()
+        public static Griego CrearGriego()
         {
-            Griego troyano = new Griego();
+            Griego griego = new Griego();
+            return griego;
         }
-        public static void CrearToyano(string nombre, int edad, int fuerza)
+        public static Troyano CrearToyano(string nombre, int edad, int fuerza)
         {
             Troyano troyano = new Troyano(nombre,edad,fuerza);
+            return troyano;
         }
-        public static void CrearGriego(string nombre, int edad, int fuerza)
+        public static Griego CrearGriego(string nombre, int edad, int fuerza)
         {
-            Troyano troyano = new Troyano(nombre, edad, fuerza);
+            Griego griego = new Griego(nombre, edad, fuerza);
+            return griego;
         }
         public static void Retirada(Troyano troyano, bool retirarse)
         {

@@ -20,7 +20,7 @@ namespace Guerra_Troya
         public Griego(string nombre, int edad, int fuerza)
         {
             this.nombre = nombre;
-            if (edad >= 0 && edad <= 120)
+            if (edad >= 15 && edad <= 60)
             {
                 this.edad = edad;
             }
@@ -44,11 +44,11 @@ namespace Guerra_Troya
             {
                 Console.WriteLine("El combatiente esta herido");
             }
-            if (muerto)
+            else if (muerto)
             {
                 Console.WriteLine("El combatiente ha muerto");
             }
-            if (retirarse)
+            else if (retirarse)
             {
                 Console.WriteLine("El combatiente se ha retirado");
             }
@@ -63,11 +63,25 @@ namespace Guerra_Troya
         }
         public void SetEdad(int edad)
         {
-            this.edad = edad;
+            if (edad >= 15 && edad <= 60)
+            {
+                this.edad = edad;
+            }
+            else
+            {
+                this.edad = 25;
+            }
         }
         public void SetFuerza(int fuerza)
         {
-            this.fuerza = fuerza;
+            if (fuerza >= 0 && fuerza <= 10)
+            {
+                this.fuerza = fuerza;
+            }
+            else
+            {
+                this.fuerza = 5;
+            }
         }
         public void SetHerido(bool herido)
         {

@@ -10,6 +10,7 @@ namespace Guerra_Troya
     {
         private int capacidad,ocupacion;
         private List<Griego> ocupantes = new List<Griego>();
+        private List<Troyano> ocupantesTroya = new List<Troyano>();
 
         public Caballo(int capacidad,List<Griego>ocupantes)
         {
@@ -24,7 +25,7 @@ namespace Guerra_Troya
                 this.ocupacion = ocupantes.Count();
             }          
         }
-        public void SetOcupante(Griego griego)//Meter objeto griego a lista ocupantes si hay sitio y actualizar ocupacion.Mostrar:Guerrero Griego 'nombre' montado en el caballo
+        public List<Griego> SetOcupante(Griego griego)//Meter objeto griego a lista ocupantes si hay sitio y actualizar ocupacion.Mostrar:Guerrero Griego 'nombre' montado en el caballo
         {
             if(capacidad > ocupantes.Count())
             {
@@ -40,11 +41,14 @@ namespace Guerra_Troya
             {
                 Console.WriteLine("Algo raro has hecho tío, mira la clase caballo método SetOcupante");//TODO
             }
+            return ocupantes;
         }
-        public void SetOcupante(Troyano troyano)//Si entrada troyano=1Mostrar:ATENCION!! Guerrero Troyano 'nombre' intentando acceder al caballo y 2matarlo
+        public List<Troyano> SetOcupante(Troyano troyano)//Si entrada troyano=1Mostrar:ATENCION!! Guerrero Troyano 'nombre' intentando acceder al caballo y 2matarlo
         {
             Console.WriteLine("¡¡ATENCIÖN!! Guerrero Troyano " + troyano.GetNombre() + " intentando acceder al caballo, procedemos a su ejecución");
             troyano.SetMuerto(true);
+            ocupantesTroya.Add(troyano);
+            return ocupantesTroya;
         }
         public int Buscar(string nombre)
         {           
@@ -71,7 +75,7 @@ namespace Guerra_Troya
         }
         public void MostrarCaballo()
         {
-            Console.WriteLine("Caballo con capacidad para "+capacidad+" guerreros, con "+ocupacion+" combatientes en el\nDatos de los guerreros:");
+            Console.WriteLine("Caballo con capacidad para "+capacidad+" guerreros, con "+ocupacion+" combatientes en él\nDatos de los guerreros:");
             foreach (Griego persona in ocupantes)
             {
                 persona.ShowAll();
@@ -80,6 +84,4 @@ namespace Guerra_Troya
 
     }
 }
-//Crea el método MostarCaballo() que muestra en pantalla la información relativa:
-//	-Capacidad, ocupación y lista de ocupantes con sus datos
 
