@@ -20,7 +20,7 @@ namespace Guerra_Troya
         public Griego(string nombre, int edad, int fuerza)
         {
             this.nombre = nombre;
-            if (edad >= 15 && edad <= 60)
+            if (ComprobarEdad(edad))
             {
                 this.edad = edad;
             }
@@ -28,13 +28,35 @@ namespace Guerra_Troya
             {
                 this.edad = 25;
             }
-            if (fuerza >= 0 && fuerza <= 10)
+            if (ComprobarFuerza(fuerza))
             {
                 this.fuerza = fuerza;
             }
             else
             {
                 this.fuerza = 5;
+            }
+        }
+        public bool ComprobarEdad(int edad)
+        {
+            if (edad >= 15 && edad <= 60)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ComprobarFuerza(int fuerza)
+        {
+            if (edad >= 0 && edad <= 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
         public void ShowAll()

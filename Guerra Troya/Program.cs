@@ -35,17 +35,7 @@ namespace Guerra_Troya
             {
                 t.ShowAll();
             }
-
-
             Console.ReadLine();
-//2.Crear un caballo con capacidad para 20 guerreros.
-//3.Crear 3  guerreros griegos(Aquiles, Agamenon y Ajax) y montarlos en el caballo.
-//4.Mostrar caballo.
-//5.Crea otro guerrero griego anónimo y móntalo en el caballo y muestra el caballo.
-//6.Buscar a Agamenon en el caballo y mostrar sus datos.
-//7.Buscar  a Odiseo en el caballo y comprobar que no existe.
-//8.Crear 1 guerrero troyano(Paris ).
-//9.Montarlo en el caballo y comprobar que no es posible.
         }
         public static Troyano CrearToyano()
         {
@@ -75,39 +65,6 @@ namespace Guerra_Troya
         {
             griego.SetRetirarse(retirarse);
         }
-        public static bool ComprobarEdad(Troyano troyano)
-        {
-            if (troyano.GetEdad() > 14 || troyano.GetEdad() < 61)
-            {
-                return true;
-            }
-            return false;
-        }
-        public static bool ComprobarEdad(Griego griego)
-        {
-            if (griego.GetEdad() > 14 || griego.GetEdad() < 61)
-            {
-                return true;
-            }
-            return false;
-        }
-        public static bool ComprobarFuerza(Troyano troyano)
-        {
-            if (troyano.GetFuerza() > 0 && troyano.GetFuerza() < 11)
-            {
-                return true;
-            }
-            return false;
-        }
-        public static bool ComprobarFuerza(Griego griego)
-        {
-            if (griego.GetFuerza() > 0 && griego.GetFuerza() < 11)//TODO:el tope de fuerza es redundante al haber puesto en el constructor un verificador
-            {
-                return true;
-            }
-            return false;
-        }
-
     }   
 }
 //Nos encontramos en algún momento entre los años 1.100 y 1.300 a.C.El rapto de Helena de Esparta por Paris de Troya ha 
