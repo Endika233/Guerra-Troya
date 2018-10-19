@@ -62,7 +62,7 @@ namespace Guerra_Troya
         public void ShowAll()
         {
             Console.WriteLine("Facción:Griegos\nGuerrero: "+nombre+"\nEdad: "+edad+"\nFuerza: "+fuerza);
-            if (herido)
+            if (herido&&!muerto)
             {
                 Console.WriteLine("El combatiente esta herido");
             }
@@ -122,6 +122,7 @@ namespace Guerra_Troya
             else
             {
                 Console.WriteLine("El guerrero debe estar herido y vivo para poder retirarse");
+                this.retirarse = false;
             }
         }
         public string GetNombre()

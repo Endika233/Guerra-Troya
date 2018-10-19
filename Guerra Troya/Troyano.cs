@@ -44,26 +44,20 @@ namespace Guerra_Troya
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
         public bool ComprobarFuerza(int fuerza)
         {
-            if (edad >= 0 && edad <= 10)
+            if (fuerza >= 0 && fuerza <= 10)
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
         public void ShowAll()
         {
             Console.WriteLine("Facción:Troyanos\nGuerrero: " + nombre + "\nEdad: " + edad + "\nFuerza: " + fuerza);
-            if (herido)
+            if (herido&&!muerto)
             {
                 Console.WriteLine("El combatiente esta herido");
             }
@@ -82,7 +76,7 @@ namespace Guerra_Troya
         }
         public void SetEdad(int edad)
         {
-            if (edad >= 15 && edad <= 60)
+            if (ComprobarEdad(edad))
             {
                 this.edad = edad;
             }
@@ -93,7 +87,7 @@ namespace Guerra_Troya
         }
         public void SetFuerza(int fuerza)
         {
-            if (fuerza >= 0 && fuerza <= 10)
+            if (ComprobarFuerza(fuerza))
             {
                 this.fuerza = fuerza;
             }
